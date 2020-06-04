@@ -9,28 +9,28 @@
         </style>
     </head>
     <body>
-        <h1>Çô¾û¾ğ¾î ÄÚµå »ı¼º±â</h1>
-        <textarea placeholder="Ãâ·ÂÇÏ°í ½ÍÀº ¹®ÀÚ¿­"  id="ipt"></textarea><br/>
-        <input type="button" id="btn" onclick="idiotmethod();cng();" value="IDIOTÇÑ¹æ¹ı(°Ì³ª°Ô ºñÈ¿À²Àû)"/><br/>
-        <input type="button" id="btn" onclick="beinglittlehumanmethod();cng();" value="±×³ª¸¶³ªÀº¹æ¹ı(ºñÈ¿À²Àû)"/><br/>
-        <input type="button" id="btn" onclick="littlehumanmethod();cng();" value="²Ï³ªÀº¹æ¹ı(Á¶±İ ºñÈ¿À²Àû)"/><br/>
-        <textarea readonly onchange="cng();" id="opt"></textarea><b id="lenlab">±ÛÀÚ¼ö³ª¿É´Ï´Ù</b><br/>
-        <a href="https://gist.github.com/xnuk/d9f883ede568d97caa158255e4b4d069">ÀÌ°Ô¹ºÁö ±Ã±İÇÑºĞ ÂüÁ¶ÇÏ½Ã±æ</a>
+        <h1>í˜€ì—‰ì–¸ì–´ ì½”ë“œ ìƒì„±ê¸°</h1>
+        <textarea placeholder="ì¶œë ¥í•˜ê³  ì‹¶ì€ ë¬¸ìì—´"  id="ipt"></textarea><br/>
+        <input type="button" id="btn" onclick="idiotmethod();cng();" value="IDIOTí•œë°©ë²•(ê²ë‚˜ê²Œ ë¹„íš¨ìœ¨ì )"/><br/>
+        <input type="button" id="btn" onclick="beinglittlehumanmethod();cng();" value="ê·¸ë‚˜ë§ˆë‚˜ì€ë°©ë²•(ë¹„íš¨ìœ¨ì )"/><br/>
+        <input type="button" id="btn" onclick="littlehumanmethod();cng();" value="ê½¤ë‚˜ì€ë°©ë²•(ì¡°ê¸ˆ ë¹„íš¨ìœ¨ì )"/><br/>
+        <textarea readonly onchange="cng();" id="opt"></textarea><b id="lenlab">ê¸€ììˆ˜ë‚˜ì˜µë‹ˆë‹¤</b><br/>
+        <a href="https://gist.github.com/xnuk/d9f883ede568d97caa158255e4b4d069">ì´ê²Œë­”ì§€ ê¶ê¸ˆí•œë¶„ ì°¸ì¡°í•˜ì‹œê¸¸</a>
         <script>
             function cng(){
-                document.getElementById("lenlab").textContent=document.getElementById("opt").value.length+"±æÀÌ";
+                document.getElementById("lenlab").textContent=document.getElementById("opt").value.length+"ê¸¸ì´";
             }
             function idiotmethod(){
                 let td=document.getElementById("ipt").value;
                 let dest="";
                 for(let i = 0;i<td.length;i++){
-                    dest+="Çü";
+                    dest+="í˜•";
                     for(let j = 0;j<td.charCodeAt(i);j++){
                         dest+=".";
                     }
-                    dest+="Ç×."
+                    dest+="í•­."
                 }
-                dest+="ÇüÈæ.Èî"
+                dest+="í˜•í‘.í£"
                 document.getElementById("opt").value=dest;
             }
             function beinglittlehumanmethod(){
@@ -44,31 +44,31 @@
                 for(let i = 0;i<td.length;i++){
                     base = td.charCodeAt(i)<base?td.charCodeAt(i):base;
                 }
-                dest+="Çü";
+                dest+="í˜•";
                 for(let j = 0;j<base;j++){
                     dest+=".";
                 }
                 
                 if(td.length<=2)
                 {
-                    dest+="Èæ...";
+                    dest+="í‘...";
                 }
                 else{
-                    dest+="Èå";
+                    dest+="í";
                     for(let i = 3;i<td.length;i++){
-                        dest+="À¸";
+                        dest+="ìœ¼";
                     }                
-                    dest+="À¹...";                    
+                    dest+="ìœ½...";                    
                 }
                 
                 for(let i = 0;i<td.length;i++){
-                    dest+="Çü";
+                    dest+="í˜•";
                     for(let j = base;j<td.charCodeAt(i);j++){
                         dest+=".";
                     }
-                    dest+="ÇÏ¾Ó."
+                    dest+="í•˜ì•™."
                 }
-                dest+="ÇüÈæ.Èî"
+                dest+="í˜•í‘.í£"
                 document.getElementById("opt").value=dest;            
             }
             function littlehumanmethod(){
@@ -86,22 +86,22 @@
                 
                 if(td.length<=2)
                 {
-                    dest+="Èæ...";
+                    dest+="í‘...";
                 }
                 else{
-                    dest+="Èå";
+                    dest+="í";
                     for(let i = 3;i<td.length;i++){
-                        dest+="À¸";
+                        dest+="ìœ¼";
                     }                
-                    dest+="À¹...";                    
+                    dest+="ìœ½...";                    
                 }
                 
                 for(let i = 0;i<td.length;i++){
                     dest+=hyungfactor(td.charCodeAt(i)-base);
                     
-                    dest+="ÇÏ¾Ó.";
+                    dest+="í•˜ì•™.";
                 }
-                dest+="ÇüÈæ.Èî"
+                dest+="í˜•í‘.í£"
                 document.getElementById("opt").value=dest;            
             }
             function hyungfactor(num){
@@ -110,10 +110,10 @@
                 let dest="";
                 var sqrtnum=Math.floor(Math.sqrt(num));
                 if(num==0){
-                    return "Çü";
+                    return "í˜•";
                 }
                 if(num==1){
-                    return "Çü.";
+                    return "í˜•.";
                 }
                 if(isPrime(num)){
                     num-=1;
@@ -125,16 +125,16 @@
                         break;
                     }
                 }
-                dest+="Çô";
+                dest+="í˜€";
                 for(let i=2;i<maxghi;i++){
-                    dest+="¾î";
+                    dest+="ì–´";
                 }
-                dest+="¾û";
+                dest+="ì—‰";
                 for(let i=0;i<num/maxghi;i++){
                     dest+=".";
                 }
                 if(subnum==1){
-                    dest+="Çü.ÇÏ¾Ó...";
+                    dest+="í˜•.í•˜ì•™...";
                 }
                 return dest;
             }
